@@ -23,7 +23,7 @@ end
 Add `MailCatchex.Supervisor` to your supervision tree. Like:
 
 ```
-supervisor(MailCatchex.Supervisor, [smtp_port: 2525, http_port: 2526])
+{MailCatchex.Supervisor, [smtp_port: 2525, http_port: 2526]}
 ```
 
 Both ports are optional, and the above values are the default ones.
