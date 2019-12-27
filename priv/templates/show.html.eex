@@ -1,0 +1,9 @@
+<% {_, {from, to, {headers, body}}} = mail %>
+<h1>From</h1>
+<p><%= from %></p>
+<h1>To</h1>
+<p><%= to %></p>
+<h1>Headers</h1>
+<p style="whitespace: pre"><%= nl2br(headers) %></p>
+<h1>Body</h1>
+<p><%= body %></p>

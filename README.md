@@ -1,21 +1,35 @@
-# Mailex
+# MailCatchex
 
-**TODO: Add description**
+A super simple SMTP server with a simpler UI to catch all emails sent to it. Useful for seeing sent emails while developing.
+
+Inspired by `mailcatcher` for Ruby.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `mailex` to your list of dependencies in `mix.exs`:
+The package can be installed
+by adding `mail_catchex` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:mailex, "~> 0.1.0"}
+    {:mail_catchex, "~> 0.1.0", only: :dev}
   ]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/mailex](https://hexdocs.pm/mailex).
 
+## Usage
+
+Add `MailCatchex.Supervisor` to your supervision tree. Like:
+
+```
+supervisor(MailCatchex.Supervisor, [smtp_port: 2525, http_port: 2526])
+```
+
+Both ports are optional, and the above values are the default ones.
+
+Then point your send address to `localhost:2525` and point browser to `localhost:2526` to see received emails.
+
+## License
+
+Do what you want. Some credits would be nice, but totally optional.
